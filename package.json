@@ -1,0 +1,23 @@
+{
+  "name": "Discord.JS v14 Bot Template",
+  "version": "1.0.0",
+  "description": "Discord bot template for Discord.JS v14",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OfikoKrtek/Discord.JS-v14-BOT-Template.git"
+  },
+  "author": "Matthew.exe#5758",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OfikoKrtek/Discord.JS-v14-BOT-Template/issues"
+  },
+  "homepage": "https://github.com/OfikoKrtek/Discord.JS-v14-BOT-Template#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "discord.js": "^14.6.0",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "winston": "^3.8.2"
+  }
+}

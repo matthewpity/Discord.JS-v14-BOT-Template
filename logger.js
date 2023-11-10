@@ -12,12 +12,12 @@ class logger {
     let d = new Date();
     this.logger.log({
       level: "info",
-      message: `${d.getHours()}:${d.getMinutes} - ${d.getDate()}.${d.getMonth()}.${d.getFullYear()} | Info: ` + Text,
+      message: Text,
     });
     console.log(
       colors.gray(
-        `${d.getDate()}.${d.getMonth()}.${d.getFullYear()} - ${d.getHours()}:${d.getMinutes()}`
-      ) + colors.cyan(" | " + "Info:" + " " + Text)
+        `[${d.getMonth()}/${d.getDate()}/${d.getFullYear()} ${d.getHours() > 12 ? d.getHours() - 12 : d.getHours()}:${d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes()} ${d.getHours() > 12 ? "PM" : "AM"}]`
+      ) + " " + colors.cyan(Text)
     );
   }
 }

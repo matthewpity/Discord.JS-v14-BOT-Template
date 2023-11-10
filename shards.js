@@ -3,7 +3,7 @@ const config = require('./config.js')
 const path = require("path");
 const logger = require("./logger");
 
-const log = new logger(path.join(__dirname, "..", "logs.log"));
+const log = new logger(path.join(__dirname, "logs.log"));
 
 let manager = new ShardingManager('./index.js', {
     token: config.Token,

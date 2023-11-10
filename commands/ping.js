@@ -1,9 +1,18 @@
 module.exports = {
   name: "ping",
-  description: "Template command",
+  description: "Just a template command",
   disabled: false,
   options: [],
+  /**
+  *
+  * 
+  * @param { Client } client
+  * @param { Interaction } interaction
+  */
   run: async (client, interaction) => {
-    await interaction.followUp({ content: "Pong!", ephemeral: true });
-  },
+    await interaction.reply({ 
+      content: "Pong!", 
+      ephemeral: true 
+    });
+  }
 };

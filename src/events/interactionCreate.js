@@ -1,10 +1,11 @@
+const bot = require("../bot");
 const config = require("../config");
-const { Client, Interaction } = require("discord.js");
+const { Interaction } = require("discord.js");
 
 /**
 *
 * 
-* @param { Client } client
+* @param { bot } client
 * @param { Interaction } interaction
 */
 module.exports = async (client, interaction) => {
@@ -20,10 +21,12 @@ module.exports = async (client, interaction) => {
                 ephemeral: true
             });
         }
+
         if (command.disabled && (config.Authors && !config.Authors.join("-").includes(interaction.user.id))) {
             return await interaction.reply({ 
-                content: "This command is either disabled or available only for Repute admins.", 
-                ephemeral: true });
+                content: "This command is either disabled or available only for admins.", 
+                ephemeral: true 
+            });
         }
 
         await command.run(client, interaction);

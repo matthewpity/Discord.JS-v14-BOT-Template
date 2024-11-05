@@ -1,3 +1,5 @@
+const bot = require("../bot");
+
 module.exports = {
   name: "ping",
   description: "Just a template command",
@@ -6,7 +8,7 @@ module.exports = {
   /**
   *
   * 
-  * @param { Client } client
+  * @param { bot } client
   * @param { Interaction } interaction
   */
   run: async (client, interaction) => {

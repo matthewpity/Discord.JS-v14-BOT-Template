@@ -15,14 +15,16 @@ class bot extends Client {
     this.loadEvents();
 
     const arrayOfSlashCommands = [];
-
-    let commandsDir = path.join(__dirname, "/commands");
+    const commandsDir = path.join(__dirname, "commands");
 
     fs.readdir(commandsDir, (err, files) => {
-      if (err) throw err;
+      if (err) {
+        throw err;
+      }
+
       files.forEach(async (file) => {
-        let command = require(commandsDir + "/" + file);
-        let commandData = {
+        const command = require(commandsDir + "/" + file);
+        const commandData = {
           name: command.name,
           description: command.description,
           options: command.options,
@@ -40,17 +42,25 @@ class bot extends Client {
   }
 
   loadEvents() {
-    const eventsDir = path.join(__dirname, "/events");
+    const eventsDir = path.join(__dirname, "events");
+
     fs.readdir(eventsDir, (err, files) => {
-      if (err) this.log(err);
-      else
+      if (err) {
+        this.log(err);
+      }
+      else {
         files.forEach((file) => {
           const event = require(eventsDir + "/" + file);
           this.on(file.split(".")[0], event.bind(null, this));
         });
+      }
     });
   }
 
+  /**
+   * 
+   * @param {String} string 
+   */
   log(string) {
     log.log(string);
   }
